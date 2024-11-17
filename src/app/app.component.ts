@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { OffcanvasComponent } from './offcanvas/offcanvas.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myapp';
+  @ViewChild('offcanvas') offcanvas: OffcanvasComponent;
+
+  openOffcanvas() {
+    this.offcanvas.open();
+  }
 }
